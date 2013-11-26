@@ -8,5 +8,6 @@ This is the readme for this very pinteresting project that helps one become prof
 
 *Various text editors
 
+*Other tools
 
 <tt>Ahh, so TT are tags!</tt>
