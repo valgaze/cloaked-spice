@@ -12,8 +12,8 @@ group :doc do
 end
 gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass', branch: '3'
 
-Group: development, :test do
-gem 'sqlite3'
+group :development, :test do
+     gem 'sqlite3'
 end
 
 group :production do
