@@ -3,6 +3,9 @@
      <% if user_signed_in? %>
           # do something
      <% else %>
+
+
+<%#IF USER IS NOT LOGGED IN...%>
        <p>
          <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
