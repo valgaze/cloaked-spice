@@ -16,7 +16,7 @@
   <tbody>
     <% @pins.each do |pin| %>
       <tr>
-         <td><%= pin.id %></td>
+        <td><%= pin.id %></td>
         <td><%= pin.description %></td>
         <td><%= link_to 'Show', pin %></td>
         <td><%= link_to 'Edit', edit_pin_path(pin) %></td>
@@ -46,34 +46,36 @@
 <% 
 =end %>
 
-<H1>String experiment table</h1>
 <table border = 1 cellpadding = 5px>
+
 <thead>
-  <tr>
-    <th>HOW DO I MAKE THIS GO ALL THE WAY ACROSS??</TH>
-  </tr>
+  <tr><th colspan=4><H1>String experiment table</h1>
+</th></tr>
      <tr> 
-      <th>String</th>
-      <th>Result/output</th>
+      <th>id</th>
+      <th>edit_pin_path(pin)</th>
       <th>Characters</th>
+      <th>pin, method: :delete</th>
     </tr>
 </thead>
 
 <tbody>
-
-  <tr>
-  <td>edit_pin_path(pin)</td>
-  <td>MAKE THIS WORK: percent = edit_pin_path(pin)  percent ></td>
-  <td>charnum</td>
-  </tr>
+ <% @pins.each do |pin| %>
 <tr>
-  <td>pin, method: :delete</td>
-  <td> percent = pin, method: :delete percent > </td>
-  <td>charnum</td>
+  <td><%= pin.id %></td>
+  <td><%= edit_pin_path(pin)  %></td>
+  <td><%= edit_pin_path(pin).length  %></td>
+  <td>destroy_pin_path(pin)  %></td>
+  </tr>
+<% end %>
 </tr>
 </tbody>
 </table>
 
+<li>New pin path: <%= new_pin_path %></li>
+<li>Pin path for 1: <%= pin_path(1) %></li>
+<li>Pin path for 2: <%= pin_path(2) %></li>
+<li>Pin path for 1000: <%= pin_path(1000) %></li>
 
 
 </div>

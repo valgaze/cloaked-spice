@@ -10,7 +10,7 @@ class PagesController < ApplicationController
   end
 
  def todo
-  end
+ end
 
 
 end
