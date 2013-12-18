@@ -1,0 +1,87 @@
+<h1>Showing the pins below</h1>
+
+<table border = 1 cellpadding = 5px>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Characters</th>
+      <th>Output</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pins.each do |pin| %>
+      <tr>
+         <td><%= pin.id %></td>
+        <td><%= pin.description %></td>
+        <td><%= link_to 'Show', pin %></td>
+        <td><%= link_to 'Edit', edit_pin_path(pin) %></td>
+        <td><%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= pin.description.length %>
+ characters </td>
+ <td>edit_pin_path(pin): <%= edit_pin_path(pin) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<%= link_to 'New Pin', new_pin_path %>
+
+</div>
+
+
+<br><br><br><hr style="height:5px;border:none;color:#333;background-color:red;" />
+<div class ="container">
+<% 
+=begin
+
+**JUST SCREWING AROUND BELOW, STRING EXPERIMENTAL TABLE
+%>
+
+<% 
+=end %>
+
+<H1>String experiment table</h1>
+<table border = 1 cellpadding = 5px>
+<thead>
+  <tr>
+    <th>HOW DO I MAKE THIS GO ALL THE WAY ACROSS??</TH>
+  </tr>
+     <tr> 
+      <th>String</th>
+      <th>Result/output</th>
+      <th>Characters</th>
+    </tr>
+</thead>
+
+<tbody>
+
+  <tr>
+  <td>edit_pin_path(pin)</td>
+  <td>MAKE THIS WORK: percent = edit_pin_path(pin)  percent ></td>
+  <td>charnum</td>
+  </tr>
+<tr>
+  <td>pin, method: :delete</td>
+  <td> percent = pin, method: :delete percent > </td>
+  <td>charnum</td>
+</tr>
+</tbody>
+</table>
+
+<br>
+<u><strong>Here's what I want to eventually figure out:</strong></u>
+<li> How to call an individual pin, ex pin(1) and then have it display in table above</li>
+<li> How to make top row span/merge&center the whole table above</li>
+<li> How to style tables & such with bootstrap</li>
+<li> How can I use these skills to help Jeff?</li>
+<li> Fix my edit to _form.html.erb where the button has create pin hard-coded into it</li>
+<Li> For above, what I changed in ~/app/views/pins/_form.html.erb <strong>f.submit "Create Pin", class: "btn btn-primary"</strong> and changed to <Strong> f.button :submit, class: "btn btn-primary"</strong>
+
+</div>
+
