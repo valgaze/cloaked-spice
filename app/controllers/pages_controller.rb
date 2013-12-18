@@ -9,6 +9,8 @@ class PagesController < ApplicationController
   def team
   end
 
+ def todo
+  end
 
 
 end
