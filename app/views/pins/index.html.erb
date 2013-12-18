@@ -4,6 +4,8 @@
   <thead>
     <tr>
       <th>Id</th>
+      <th>userid</th>
+      <th>Email</th>
       <th>Description</th>
       <th></th>
       <th></th>
@@ -17,6 +19,8 @@
     <% @pins.each do |pin| %>
       <tr>
         <td><%= pin.id %></td>
+        <td><%= pin.user_id %></td>
+        <td><%= pin.user.email if pin.user %></td>
         <td><%= pin.description %></td>
         <td><%= link_to 'Show', pin %></td>
         <td><%= link_to 'Edit', edit_pin_path(pin) %></td>
@@ -76,7 +80,8 @@
 <li>Pin path for 1: <%= pin_path(1) %></li>
 <li>Pin path for 2: <%= pin_path(2) %></li>
 <li>Pin path for 1000: <%= pin_path(1000) %></li>
-
+<li>The first pin: <%= Pin.first.description %></li>
+<li>The last pin: <%= Pin.last.description %></li>
 
 </div>
 
