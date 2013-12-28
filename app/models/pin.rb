@@ -1,3 +1,5 @@
 class Pin < ActiveRecord::Base
-	belongs_to :user
+     Paperclip.options[:command_path] = 'C:/Program Files/ImageMagick-6.8.8-Q16'
+     belongs_to :user
+     has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
 end
