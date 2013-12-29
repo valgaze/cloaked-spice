@@ -12,5 +12,7 @@ class PagesController < ApplicationController
  def todo
  end
 
+def dbase
+end
 
 end

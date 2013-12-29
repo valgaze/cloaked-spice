@@ -1,98 +1,16 @@
-<h1>Showing the pins below</h1>
-
-<table border = 1 cellpadding = 5px>
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Id</th>
-      <th>userid</th>
-      <th>Email</th>
-      <th>Description</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th>Characters</th>
-      <th>Output</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @pins.each do |pin| %>
-      <tr>
-        <td><%= image_tag pin.image.url(:medium) %></td>
-        <td><%= pin.id %></td>
-        <td><%= pin.user_id %></td>
-        <td><%= pin.user.email if pin.user %></td>
-        <td><%= pin.description %></td>
-        <td><%= link_to 'Show', pin %></td>
-
+<div id="pins" class="transitions-enabled">
+  <% @pins.each do |pin| %>
+    <div class="box panel panel-default">
+      <%= image_tag pin.image.url(:medium) %>
+      <div class="panel-body">
+        <%= pin.description %>
+        <%= pin.user.email if pin.user %>
+        <%= link_to 'Show', pin_path(pin) %>
         <% if pin.user == current_user %>
-
-        <td><%= link_to 'Edit', edit_pin_path(pin) %></td>
-        <td><%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-
+          <%= link_to 'Edit', edit_pin_path(pin) %>
+          <%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %>
         <% end %>
-
-        <td><%= pin.description.length %> characters </td>
- <td>edit_pin_path(pin): <%= edit_pin_path(pin) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<br>
-
-<% if user_signed_in? %>
-  <%= link_to 'New Pin', new_pin_path %>
-<% end %>
-
-
-
+      </div>
+    </div>
+  <% end %>
 </div>
-
-
-<br><br><br><hr style="height:5px;border:none;color:#333;background-color:red;" />
-<div class ="container">
-<% 
-=begin
-
-**JUST SCREWING AROUND BELOW, STRING EXPERIMENTAL TABLE
-%>
-
-<% 
-=end %>
-
-<table border = 1 cellpadding = 5px>
-
-<thead>
-  <tr><th colspan=4><H1>String experiment table</h1>
-</th></tr>
-     <tr> 
-      <th>id</th>
-      <th>edit_pin_path(pin)</th>
-      <th>Characters</th>
-      <th>pin, method: :delete</th>
-    </tr>
-</thead>
-
-<tbody>
- <% @pins.each do |pin| %>
-<tr>
-  <td><%= pin.id %></td>
-  <td><%= edit_pin_path(pin)  %></td>
-  <td><%= edit_pin_path(pin).length  %></td>
-  <td>destroy_pin_path(pin)  %></td>
-  </tr>
-<% end %>
-</tr>
-</tbody>
-</table>
-
-<li>New pin path: <%= new_pin_path %></li>
-<li>Pin path for 1: <%= pin_path(1) %></li>
-<li>Pin path for 2: <%= pin_path(2) %></li>
-<li>Pin path for 1000: <%= pin_path(1000) %></li>
-<li>The first pin: <%= Pin.first.description %></li>
-<li>The last pin: <%= Pin.last.description %></li>
-<li>The 6th pin: Gahh why no work: <%%= Pin[6].description %></li>
-</div>
-

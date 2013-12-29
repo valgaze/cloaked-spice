@@ -8,6 +8,10 @@ class PinsController < ApplicationController
     @pins = Pin.all
   end
 
+ def dbase
+    @pins = Pin.all
+  end
+
   def show
   end
 
